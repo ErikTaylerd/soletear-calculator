@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 export type RoiInputs = {
   householdSize: number;
   electricityPrice: number; // per kWh
-  systemCost: number; // upfront before grant
+  systemCost: number; // upfront before gran
   grant: number; // upfront grant deduction
   maintenance: number; // yearly
   savingsRatio: number; // 0-1
