@@ -73,7 +73,7 @@ export default function RoiCalculator({ className }: { className?: string }) {
 
         <Card>
           <CardHeader>
-            <CardTitle>Antaganden</CardTitle>
+            <CardTitle>Beräkna din besparing</CardTitle>
             <CardDescription>Justera siffror för att matcha ditt hem och din förbrukning.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
