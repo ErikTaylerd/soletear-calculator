@@ -79,7 +79,7 @@ export default function RoiCalculator({ className }: { className?: string }) {
           <CardContent className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="household">Antal personer</Label>
+                <Label htmlFor="household" className="flex items-end min-h-[2.8rem] !leading-tight mb-1">Antal personer</Label>
                 <Input id="household" type="number" min={1} value={form.householdSize}
                   onChange={(e) => setForm({ ...form, householdSize: Number(e.target.value) })} />
               </div>
