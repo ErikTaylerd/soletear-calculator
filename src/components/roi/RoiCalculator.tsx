@@ -69,10 +69,7 @@ export default function RoiCalculator({ className }: { className?: string }) {
   return (
     <section className={cn("grid gap-8 md:grid-cols-5", className)} aria-labelledby="roi-heading">
       <div className="md:col-span-2 space-y-6">
-        <header>
-          <h2 id="roi-heading" className="text-2xl font-semibold tracking-tight">Beräkna din besparing</h2>
-          <p className="text-muted-foreground mt-1">Uppskatta besparingar och återbetalningstid baserat på ditt ushålls förutsättningar.</p>
-        </header>
+
 
         <Card>
           <CardHeader>
@@ -106,15 +103,6 @@ export default function RoiCalculator({ className }: { className?: string }) {
                 <Input id="kwh" type="number" min={500} value={form.kwhPerPerson}
                   onChange={(e) => setForm({ ...form, kwhPerPerson: Number(e.target.value) })} />
               </div>
-            </div>
-
-            <div>
-              <Label>Andel som SoletAer täcker ({Math.round(form.savingsRatio * 100)}%)</Label>
-              <Slider value={[Math.round(form.savingsRatio * 100)]}
-                onValueChange={(v) => setForm({ ...form, savingsRatio: v[0] / 100 })}
-                min={40} max={85} step={1}
-                className="mt-2" />
-              <p className="text-xs text-muted-foreground mt-1">Standard: 66% enligt budskapet ”2/3 av varmvattnet gratis”.</p>
             </div>
           </CardContent>
         </Card>
