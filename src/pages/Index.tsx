@@ -13,7 +13,7 @@ const Index = () => {
 
 
 
-      <main id="result" className="container mx-auto pb-16">
+      <main id="result" className="container mx-auto px-0 pb-16">
         <RoiCalculator />
       </main>
     </div>
