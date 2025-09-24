@@ -70,8 +70,8 @@ export default function RoiCalculator({ className }: { className?: string }) {
     <section className={cn("grid gap-8 md:grid-cols-5", className)} aria-labelledby="roi-heading">
       <div className="md:col-span-2 space-y-6">
         <header>
-          <h2 id="roi-heading" className="text-2xl font-semibold tracking-tight">Beräkna din SoletAer ROI</h2>
-          <p className="text-muted-foreground mt-1">Uppskatta besparingar och återbetalningstid baserat på hushållets förutsättningar.</p>
+          <h2 id="roi-heading" className="text-2xl font-semibold tracking-tight">Beräkna din besparing</h2>
+          <p className="text-muted-foreground mt-1">Uppskatta besparingar och återbetalningstid baserat på ditt ushålls förutsättningar.</p>
         </header>
 
         <Card>
@@ -116,10 +116,6 @@ export default function RoiCalculator({ className }: { className?: string }) {
                 className="mt-2" />
               <p className="text-xs text-muted-foreground mt-1">Standard: 66% enligt budskapet ”2/3 av varmvattnet gratis”.</p>
             </div>
-
-            <div className="pt-2">
-              <Button variant="hero" className="w-full">Uppdatera beräkning</Button>
-            </div>
           </CardContent>
         </Card>
       </div>
@@ -158,11 +154,37 @@ export default function RoiCalculator({ className }: { className?: string }) {
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+function Stat({ label, value }: { label: string; value: string | number }) {
+  // Normalize to a string and replace NBSPs with normal spaces
+  let str = String(value).replace(/\u00A0/g, " ").trim();
+
+  // Try to extract a trailing '%' first (no space between number and unit)
+  let unit: string | null = null;
+  let num = str;
+
+  const percent = str.match(/^(.+?)(%)$/);
+  if (percent) {
+    num = percent[1].trim();
+    unit = percent[2];
+  } else {
+    // Otherwise split on normal spaces; last token is the unit
+    const parts = str.split(" ");
+    if (parts.length > 1) {
+      unit = parts.pop() || null;
+      num = parts.join(" ");
+    }
+  }
+
   return (
-    <div className="rounded-lg border p-4 bg-card shadow-sm">
+    <div className="rounded-lg border p-4 bg-card shadow-sm min-w-0">
       <p className="text-xs text-muted-foreground">{label}</p>
-      <p className="mt-1 text-xl font-semibold">{value}</p>
+   <p className="mt-1 text-xl font-semibold leading-tight">
+  <span className="whitespace-nowrap">{num}</span>
+  {unit && (
+    <span className="ml-1 text-base sm:text-lg">{unit}</span>
+  )}
+</p>
     </div>
   );
 }
+

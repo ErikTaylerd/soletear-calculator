@@ -14,14 +14,8 @@ const Index = () => {
       <header className="container mx-auto py-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">SoletAer ROI Calculator</h1>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">SoletAer ROI-kalkylator</h1>
             <p className="mt-4 text-lg text-muted-foreground">Se hur mycket du kan spara när SoletAer täcker upp till 2/3 av dina varmvattenkostnader.</p>
-            <div className="mt-6 flex gap-3">
-              <Button variant="hero">Börja räkna</Button>
-              <Button variant="brand" asChild>
-                <a href="#result">Läs resultat</a>
-              </Button>
-            </div>
           </div>
           <div className="rounded-xl border bg-card p-6 shadow-brand-glow bg-gradient-brand">
             <p className="text-sm text-muted-foreground">Snabbguide</p>
