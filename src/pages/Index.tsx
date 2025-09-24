@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <SEO
         title="SoletAer ROI Calculator | Estimate Payback & Savings"
         description="Calculate ROI and payback period for SoletAer solar hot water. Adjust assumptions and see savings and cashflow over time."
