@@ -74,7 +74,7 @@ export default function RoiCalculator({ className }: { className?: string }) {
         <Card>
           <CardHeader>
             <CardTitle>Beräkna din besparing</CardTitle>
-            <CardDescription>Justera siffror för att matcha ditt hem och din förbrukning.</CardDescription>
+            <CardDescription>Justera siffrorna för att matcha ditt hem och din förbrukning.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
