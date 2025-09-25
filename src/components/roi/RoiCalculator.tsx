@@ -119,7 +119,7 @@ export default function RoiCalculator({ className }: { className?: string }) {
               <Stat label="Årlig besparing" value={currency(derived.netAnnualSavings)} />
               <Stat label="Återbetalning" value={isFinite(derived.paybackYears) ? `${derived.paybackYears.toFixed(1)} år` : "–"} />
               <Stat label="Uppstarts-kostnad" value={currency(derived.upfront)} />
-              <Stat label="ROI efter 10 år" value={`${Math.round(derived.tenYearRoi * 100)}%`} />
+              <Stat label="Besparing 10 år" value={`${Math.round(derived.tenYearRoi * 100)}%`} />
             </div>
 
             <div className="h-64">
