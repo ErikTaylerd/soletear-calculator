@@ -37,8 +37,8 @@ export type RoiInputs = {
 
 /** ---------- Defaults ---------- **/
 const defaultInputs: RoiInputs = {
-  householdSize: 3,
-  electricityPrice: 1.95, // SEK / kWh - inkl. skatt, moms och tariffer
+  householdSize: 4,
+  electricityPrice: 2, // SEK / kWh - inkl. skatt, moms och tariffer
   systemCost: 29000,
   grant: 0,
   maintenance: 0, // No maintenance cost
